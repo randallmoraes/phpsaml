@@ -306,7 +306,11 @@ class Settings
         if (file_exists($advancedFilename)) {
             /** @var array $advancedSettings */
             include $advancedFilename;
-            $settings = array_merge($settings, $advancedSettings);
+            
+            //la variable settings no se define en el archivo fue cambiada a la variabe phpsamlsettings
+            //$settings = array_merge($settings, $advancedSettings);
+            $settings = array_merge($phpsamlsettings, $advancedSettings);
+            
         }
 
 
